@@ -24,8 +24,8 @@ export class KeywordController {
   }
 
   @Get('ks')
-  findAll(@Req() request: Request) {
-    console.log('request: ', request);
+  // findAll(@Req() request: Request) {
+  findAll() {
     return this.keywordService.findAll();
   }
 
