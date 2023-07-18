@@ -32,6 +32,12 @@
 $ npm install
 ```
 
+## Formatting + Linting
+
+```bash
+npm run format && npm run lint
+```
+
 ## Running the app
 
 ```bash
