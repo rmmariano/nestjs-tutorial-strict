@@ -1,4 +1,14 @@
 {
   "singleQuote": true,
-  "trailingComma": "all"
+  "trailingComma": "all",
+  "importOrderParserPlugins": [
+    "typescript",
+    "decorators-legacy"
+  ],
+  "importOrder": [
+    "^components/(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }

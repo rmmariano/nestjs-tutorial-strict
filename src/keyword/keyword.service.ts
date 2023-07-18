@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { IKeyword } from './interfaces/keyword.interface';
+
 import { UpdateKeywordDto } from './dto/update-keyword.dto';
+import { IKeyword } from './interfaces/keyword.interface';
 
 @Injectable()
 export class KeywordService {

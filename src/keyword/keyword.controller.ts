@@ -1,18 +1,18 @@
-import { Request } from 'express';
-
 import {
-  Controller,
-  Get,
-  Post,
   Body,
-  Patch,
-  Param,
+  Controller,
   Delete,
+  Get,
+  Param,
+  Patch,
+  Post,
   Req,
 } from '@nestjs/common';
-import { KeywordService } from './keyword.service';
+import { Request } from 'express';
+
 import { CreateKeywordDto } from './dto/create-keyword.dto';
 import { UpdateKeywordDto } from './dto/update-keyword.dto';
+import { KeywordService } from './keyword.service';
 
 @Controller('keyword')
 export class KeywordController {
