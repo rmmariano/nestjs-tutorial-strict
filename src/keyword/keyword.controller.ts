@@ -4,6 +4,7 @@ import {
   Delete,
   Get,
   Param,
+  ParseIntPipe,
   Patch,
   Post, // Req,
 } from '@nestjs/common';
@@ -29,8 +30,9 @@ export class KeywordController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.keywordService.findOne(+id);
+  // findOne(@Param('id') id: string) {
+  findOne(@Param('id', ParseIntPipe) id: number) {
+    return this.keywordService.findOne(id);
   }
 
   @Patch(':id')
