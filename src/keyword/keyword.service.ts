@@ -1,4 +1,8 @@
-import { Injectable } from '@nestjs/common';
+import {
+  BadRequestException, // HttpException,
+  // HttpStatus,
+  Injectable,
+} from '@nestjs/common';
 
 import { UpdateKeywordDto } from './dto/update-keyword.dto';
 import { IKeyword } from './interfaces/keyword.interface';
@@ -13,8 +17,25 @@ export class KeywordService {
   }
 
   findAll(): IKeyword[] {
-    console.log('returns all keywords: ', this.keywords);
-    return this.keywords;
+    try {
+      return this.keywords;
+    } catch (error) {
+      // throw new HttpException('Forbidden', HttpStatus.FORBIDDEN);
+      // throw new HttpException(
+      //   {
+      //     status: HttpStatus.FORBIDDEN,
+      //     error: 'This is a custom message',
+      //   },
+      //   HttpStatus.FORBIDDEN,
+      //   {
+      //     cause: error,
+      //   },
+      // );
+      throw new BadRequestException('Something bad happened', {
+        cause: new Error(),
+        description: 'Some error description',
+      });
+    }
   }
 
   findOne(id: number) {
